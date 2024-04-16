@@ -1,0 +1,160 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module",
+    "tsconfigRootDir": "./",
+    "project": [
+      "./tsconfig.json",
+      "./tsconfig.node.json"
+    ]
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "import",
+    "unused-imports",
+    "prettier",
+    "jest"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", ",*.tsx", "test/**"],
+      "plugins": ["jest"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:jest/recommended"
+      ],
+      "rules": { "jest/prefer-expect-assertions": "off" },
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "dist",
+    "*.config.js",
+    "*.config.ts"
+  ],
+  "rules": {
+    "import/no-unresolved": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { "selector": "variable", "format": ["camelCase", "UPPER_CASE", "PascalCase"] },
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "should", "has", "can", "did", "will"]
+      },
+      {
+        "selector": "typeParameter",
+        "format": ["PascalCase"],
+        "prefix": ["T"]
+      },
+      {
+        "selector": "enum",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "enumMember",
+        "format": ["UPPER_CASE"]
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "[I][A-Z]",
+          "match": true
+        }
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["destructured"],
+        "format": null
+      }
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "no-empty-function": "off",
+    "no-multiple-empty-lines": "error",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["sibling", "parent", "index"],
+          "type",
+          "unknown"
+        ],
+        "pathGroups": [
+          { "pattern": "react", "group": "builtin", "position": "after" },
+          { "pattern": "react-dom", "group": "builtin", "position": "after" }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "react-dom", "unknown"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        }
+      }
+    ],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.json"
+      },
+      "node": {
+        "extensions": [".ts", ".tsx"],
+        "moduleDirectory": ["src", "node_modules"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    },
+    "jest": {
+      "globalAliases": {
+        "describe": ["context"],
+        "fdescribe": ["fcontext"],
+        "xdescribe": ["xcontext"]
+      }
+    }
+  }
+}
