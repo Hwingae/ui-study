@@ -121,5 +121,19 @@
   details[open] summary::marker {
     content: "- ";
   }
+
+  // 화면에 안보이게 css로 숨김
+  .item2 {
+    .description{
+      display: none;
+    }
+    &.current {
+      .description {
+        display: block;
+      }
+    }
+  }
+
+
 }
 
