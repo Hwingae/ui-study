@@ -17,18 +17,15 @@ const AccordionItem = (
         toggle: () => void
     }) => {
     return (
-        <li className={cx('item', {current})} key={id}>
+        <li className={cx('item', 'item3', {current})} key={id}>
             <div className={cx('tab')} onClick={toggle}>{title}</div>
-            {
-                current ?
-                    <div className={cx('description')}>{description}</div>
-                    : null
-            }
+            <div className={cx('description')}>{description}</div>
         </li>
     )
 }
 
-const Accordion1 = () => {
+// 애니메이션 추가한 아코디언
+const Accordion3 = () => {
     const [currentId, setCurrentId] = useState<string | null>(data[0].id)
 
     // 클로저를 사용
@@ -37,7 +34,7 @@ const Accordion1 = () => {
     }
 
     return <>
-        <h3>#1. React <sub>현재 desc만 html로 렌더링</sub></h3>
+        <h3>#3. React <sub>애니메이션 (transition)</sub></h3>
         <ul className={cx('container')}>
             {
                 data.map(d => (
@@ -48,4 +45,4 @@ const Accordion1 = () => {
     </>;
 };
 
-export default Accordion1
+export default Accordion3
