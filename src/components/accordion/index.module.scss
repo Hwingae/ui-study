@@ -40,8 +40,9 @@
     }
   }
 
+  // 화면에 안보이게 css로 숨김
   .item2 {
-    .description {
+    .description{
       display: none;
     }
     &.current {
@@ -52,18 +53,18 @@
   }
 
   .item3 {
+    // 내용을 펼치고 접고 상태에 따른 CSS 변경
     overflow: hidden;
-
     .description {
       padding: 0 15px;
-      border-bottom-width: 0;
+      border-bottom-width: 0px;
       max-height: 0;
       transition: ease 0.3s;
     }
     &.current .description {
       padding: 15px;
       border-bottom-width: 1px;
-      max-height: 300px;
+      max-height: 100vh;
     }
   }
 
@@ -83,14 +84,14 @@
       transition: ease 0.3s;
     }
     .input:checked {
-      + .tab {
+      + .tab { // +: next
         background-color: #ace;
 
         &::before {
           content: '-';
         }
       }
-      ~ .description {
+      ~ .description { // ~: siblings
         padding: 15px;
         border-bottom-width: 1px;
         max-height: 300px;
@@ -122,32 +123,4 @@
     content: "- ";
   }
 
-  // 화면에 안보이게 css로 숨김
-  .item2 {
-    .description{
-      display: none;
-    }
-    &.current {
-      .description {
-        display: block;
-      }
-    }
-  }
-  
-  .item3 {
-    // 내용을 펼치고 접고 상태에 따른 CSS 변경
-    overflow: hidden;
-    .description {
-      padding: 0 15px;
-      border-bottom-width: 0px;
-      max-height: 0;
-      transition: ease 0.3s;
-    }
-    &.currrent .description {
-      padding: 15px;
-      border-bottom-width: 1px;
-      max-height: 100vh;
-    }
-  }
 }
-
