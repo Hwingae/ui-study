@@ -39,7 +39,7 @@ const TabMenu2 = () => {
 
     // 클로저를 사용
     const toggleItem = (id: string) => () => {
-        setCurrentId(prev => prev === id ? null : id)
+        setCurrentId(id)
     }
 
     return <>

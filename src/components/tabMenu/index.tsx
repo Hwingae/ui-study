@@ -4,6 +4,7 @@ import cx from '@/components/tabMenu/cs';
 import TabMenu1 from './1_r';
 import TabMenu2 from './2_r';
 import TabMenu3 from './3_r';
+import TabMenu4V from './4_v';
 
 const TabMenus = () => {
     return(
@@ -12,6 +13,7 @@ const TabMenus = () => {
             <TabMenu1 />
             <TabMenu2 />
             <TabMenu3 />
+            <TabMenu4V />
         </div>
     )
 }

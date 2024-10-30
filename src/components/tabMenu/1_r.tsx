@@ -47,7 +47,7 @@ const TabMenu1 = () => {
 
     // 클로저를 사용
     const toggleItem = (id: string) => () => {
-        setCurrentId(prev => prev === id ? null : id)
+        setCurrentId(id)
     }
 
     const currentData = data.find(item => item.id === currentId)?.description
