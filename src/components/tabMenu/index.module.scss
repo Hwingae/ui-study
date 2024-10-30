@@ -34,4 +34,11 @@
   .description {
     padding: 0 15px 15px;
   }
+
+  .tabMenu2 .description {
+    display: none;
+    &.current {
+      display: block;
+    }
+  }
 }

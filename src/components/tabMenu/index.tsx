@@ -2,12 +2,14 @@
 // 여러개는 이지피지 하니 1번으로 ㄱㄱㅆ
 import cx from '@/components/tabMenu/cs';
 import TabMenu1 from './1_r';
+import TabMenu2 from './2_r';
 
 const TabMenus = () => {
     return(
         <div className={cx('TabMenus')}>
             <h2>탭메뉴2</h2>
-            <TabMenu1/>
+            <TabMenu1 />
+            <TabMenu2 />
         </div>
     )
 }
