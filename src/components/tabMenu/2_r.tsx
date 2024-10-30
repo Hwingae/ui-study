@@ -2,6 +2,19 @@ import data from '@/components/tabMenu/data';
 import cx from '@/components/tabMenu/cs';
 import { useState } from 'react';
 
+/*
+일반적인 형태
+<div>
+    <tabList>
+        <tab></tab> // 나열
+        <tab></tab>
+        <tab></tab>
+        ...
+    </tabList>
+    <description> ... </description> // 나열
+</div>
+*/
+
 const TabItem = (
     {
         id,
