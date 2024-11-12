@@ -2,6 +2,7 @@ import Test_1 from '@/components/test1';
 import Test_2 from '@/components/test2/react';
 import Accordions from '@/components/accordion';
 import TabMenus from '@/components/tabMenu';
+import Tooltips from './components/tooltip';
 
 const routePaths = [
     '/',
@@ -10,7 +11,8 @@ const routePaths = [
     // '/test2/vanilla',
     // '/test2/react',
     '/accordion',
-    '/tabMenu'
+    '/tabMenu',
+    '/toolTip'
 ] as const
 export type ROUTE_PATH = (typeof routePaths)[number];
 
@@ -37,7 +39,8 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
         name: 'root',
         children: [
             '/accordion',
-            '/tabMenu'
+            '/tabMenu',
+            '/toolTip'
             /*'/test1',
             '/test2'*/
         ]
@@ -53,6 +56,12 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
         link: '/tabMenu',
         name: '탭메뉴',
         children: TabMenus,
+    },
+    '/toolTip': {
+        key: '/toolTip',
+        link: '/toolTip',
+        name: '툴팁',
+        children: Tooltips,
     },
     // '/test1' : {
     //     key: '/test1',
